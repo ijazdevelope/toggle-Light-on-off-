@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle light</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+
+    <div class="contacontaineriner">
+        <figure>
+            <img src="./images/pic_bulboff.gif" id="myImage" alt="light">
+            <figcaption>
+                <p class="figParagraph">Light if Off</p>
+            </figcaption>
+        </figure>
+
+        <div class="switch-holder">
+            <div class="switch-label">
+                <i class="fa fa-lightbulb"></i><span>Bluetooth</span>
+            </div>
+            <div class="switch-toggle">
+                <input type="checkbox" id="bluetooth">
+                <label for="bluetooth"></label>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    const myLight = document.getElementById('bluetooth');
+    const myImage = document.getElementById('myImage');
+    const paragraph = document.querySelector('.figParagraph');
+    myLight.addEventListener('change', e => {
+        if (myLight.checked) {
+            myImage.src = './images/pic_bulbon.gif';
+            paragraph.innerHTML = 'Light is On'
+        } else {
+            myImage.src = './images/pic_bulboff.gif';
+            paragraph.innerHTML = 'Light is Off'
+        }
+    })
+</script>
+
+</html>
